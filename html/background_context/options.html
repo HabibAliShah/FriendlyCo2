@@ -1,0 +1,445 @@
+<html style="
+    margin: 0;
+    padding: 0;
+    ">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/css/animations.css">
+        <link rel="stylesheet" type="text/css" href="/css/status_header.css">
+        <link rel="stylesheet" type="text/css" href="/css/background_context/options.css">
+        <title class="app_name_brand"></title>
+    </head>
+    <body style="
+        margin: 0;
+        padding: 0;
+        ">
+        <splash-screen class="fade-in" id="welcome-screen" style="display: flex;width: 100%; height: 485px; background-color: #ffffff;z-index: 3;align-items: center;">
+            <div style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                position: absolute;
+                z-index: 3;
+                width: 100%;
+                /* height: 100%; */
+                ">
+                <logo class="fade-in app_logo_icon" style="
+                    display: flex;
+                    width: 104px;
+                    height: 104px;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    color: rgb(246, 98, 1);
+                    background-color: transparent;
+                    filter: drop-shadow(#80ceec 2px 4px 57px);
+                    image-rendering: pixelated;
+                    background-image: url();">   
+                </logo>
+                <extension-name style="
+                    display: flex;
+                    color: grey;
+                    font-family: helvetica, arial, roboto;
+                    font-weight: 600;
+                    font-size: 26px;
+                    letter-spacing: -1px;
+                    margin: 16px;
+                    " class="app_name_brand"></extension-name>
+                <actions>
+                    <vertical-slide-list id="welcome_screen_actions" style="
+                        display: flex;
+                        ">
+                        <div style="
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: space-evenly;
+                            align-self: center;
+                            background-color: #380a2100;
+                            width: 178px;
+                            height: 135px;
+                            ">
+
+                        </div>
+                    </vertical-slide-list>
+                </actions>
+            </div>
+        </splash-screen>
+        <app-menu style="
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            ">
+            <settings-popup class="fade-in" style="display: none;width: 100%;height: 100%;position: absolute;z-index: 3;align-items: center;justify-content: center;backdrop-filter: blur(5px); z-index:999;">
+                <div style="
+                    display: flex;
+                    flex-direction: column;
+                    width: 94%;
+                    height: 93%;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: #000000ed;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    box-shadow: 0px 0px 16px 0px black;
+                    border: 1px dashed #838383;
+                    ">
+                    <quit listener_id="close_settings_popup" style="
+                        display: flex;
+                        height: 31px;
+                        width: 31px;
+                        background-image: url('');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: 60% 60%;
+                        z-index: 9999;
+                        background-color: white;
+                        border-radius: 21px;
+                        position: relative;
+                        top: 13px;
+                        right: 13px;
+                        align-self: flex-end;
+                        cursor: pointer;
+                        " class=""></quit>
+                    <header style="
+                        display: flex;
+                        width: 100%;
+                        padding: 16px;
+                        ">
+                        <div style="
+                            display: flex;
+                            width: 100%;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            ">
+                            <e-title style="
+                                color: white;
+                                display: flex;
+                                font-family: helvetica, arial, roboto;
+                                font-weight: 800;
+                                font-size: 16px;
+                                "> SETTINGS </e-title>
+                        </div>
+                    </header>
+                    <content style="
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        height: 100%;
+                        ">
+                    </content>
+                </div>
+            </settings-popup>
+            <a-header style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: 10%;
+                    box-shadow: 0px 0px 40px -10px black;
+                    background-color: #2a2a2a;
+                    z-index: 2;
+                ">
+                <a-branding style="
+                    display: flex;
+                    ">
+                    <div style="
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        ">
+                        <a-logo class="app_logo_icon" style="display: flex; width: 45px; height: 45px; background-position: center center; background-repeat: no-repeat; background-size: 65% 65%; background-color: rgba(255, 0, 0, 0); margin: 1px 1px 1px 12px; background-image: url();
+                            image-rendering: pixelated;
+                            "></a-logo>
+                        <a-logotype style="
+                            font-size: 19px;
+                            font-family: helvetica, arial, 'Roboto';
+                            font-weight: 600;
+                            color: white;
+                            margin: 0px 0px 0px -4px;
+                            " class="app_name_brand"></a-logotype>
+                    </div>
+                </a-branding>
+                <div style="
+                    display: flex;
+                    height: 100%;
+                    ">
+                    <a-stats-info id="executions_counts" style="
+                        display: flex;
+                        height: 100%;
+                        align-items: center;
+                        ">
+                        <div style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            height: 100%;
+                            ">
+                        </div>
+                    </a-stats-info>
+                </div>
+                <div style="
+                    display: flex;
+                    height: 100%;
+                    ">
+                    <a-stats-info style="
+                        display: flex;
+                        height: 100%;
+                        align-items: center;
+                        ">
+                        <div style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            height: 100%;
+                            ">
+                            <a-stats-info style="
+                                display: flex;
+                                height: 100%;
+                                align-items: center;
+                                ">
+                            </a-stats-info>
+                        </div>
+                    </a-stats-info>
+                </div>
+                <div style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    ">
+                    <a-states-info style="
+                        display: flex;
+                        height: 100%;
+                        background-color: #0000ff00;
+                        margin: 0px 32px 0px 0px;
+                        ">
+                        <div style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            height: 100%;
+                            ">
+                        </div>
+                    </a-states-info>
+                    <a-options-icon style="
+                        display: flex;
+                        height: 100%;
+                        margin-right: 8px;
+                        ">
+                        <div style="
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            ">
+                            <button listener_id="open_settings_popup" style="
+                                display: flex;
+                                width: 30px;
+                                height: 30px;
+                                cursor: pointer;
+                                background-image: url('');
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: 80% 100%;
+                                image-rendering: pixelated;
+                                filter: invert(1);
+                                border: none;
+                                "></button>
+                        </div>
+                    </a-options-icon>
+                </div>
+            </a-header>
+            <a-content style="
+                display: flex;
+                width: 100%;
+                height: 90%;
+                background: radial-gradient(circle, rgb(0 0 0) 0%, rgb(5 5 5) 1%, rgb(0 0 0) 67%);
+                ">
+                <div style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: space-between;
+                    overflow: hidden;
+                    ">
+                    <div id="main_actions" style="
+                        display: flex;
+                        width: 100%;
+                        height: 8%;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid#353535;
+                        padding: 14px 0px 14px 0px;
+                        ">
+                        <div style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 96%;
+                            ">
+                        </div>
+                    </div>
+                    <div style="
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        height: 100%;
+                        ">
+                        <div id="set_target_content" style="
+                            display: flex;
+                            flex-direction: column;
+                            width: 40%;
+                            justify-content: space-between;
+                            ">
+                            <div id="database_spreadsheet_url" style="
+                                display: flex;
+                                background-color: #2a2a2a;
+                                padding: 14px;
+                                height: 13.3%;
+                                ">
+                                <div style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    height: 100%;
+                                    ">
+                                    <text style="
+                                        color: white;
+                                        margin-bottom: 13px;
+                                        font-weight: 400;
+                                        font-size: 13px;
+                                        font-family: helvetica, arial, roboto;
+                                        "> Database spreadhsheet URL </text>
+                                    <div style="
+                                        display: flex;
+                                        width: 100%;
+                                        height: 100%;
+                                        ">
+                                        <input listener_id="database_spreadsheet_url_field" placeholder="Google Spreadsheet URL here" data="{}" style="margin: 0px;width: 100%;height: 100%;resize: none; padding: 8px;"></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="set_target_message_to_send" style="
+                                display: flex;
+                                background-color: #2a2a2a;
+                                padding: 14px;
+                                height: 33.3%;
+                                ">
+                                <div style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    height: 100%;
+                                    ">
+                                    <text style="
+                                        color: white;
+                                        margin-bottom: 13px;
+                                        font-weight: 400;
+                                        font-size: 13px;
+                                        font-family: helvetica, arial, roboto;
+                                        "> Set target message to send </text>
+                                    <div style="
+                                        display: flex;
+                                        width: 100%;
+                                        height: 100%;
+                                        ">
+                                        <textarea listener_id="target_message_to_send_input" placeholder="Write you message here, it will automatically be saved when typing" data="{}" style="margin: 0px;width: 100%;height: 100%;resize: none; padding: 8px;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="set_file_to_send" style="display: flex;background-color: #2a2a2a;padding: 14px;height: 33.3%;">
+                                <div style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    ">
+                                    <text style="
+                                        color: white;
+                                        margin-bottom: 13px;
+                                        font-weight: 400;
+                                        font-size: 13px;
+                                        font-family: helvetica, arial, roboto;
+                                        "> Set file attachment (optional) </text>
+                                    <div style="
+                                        display: flex;
+                                        width: 100%;
+                                        height: 100%;
+                                        align-items: center;
+                                        justify-content: center;
+                                        ">
+                                        <label class="file" style="width: 80%;">
+                                        <input listener_id="target_file_attachment_input" type="file" id="file" data="{}" style="">
+                                        <span class="file-custom" style=""></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="
+                            display: flex;
+                            width: 60%;
+                            align-items: center;
+                            justify-content: center;
+                            ">
+                            <div id="tasks_logs" style="
+                                display: flex;
+                                width: 80%;
+                                height: 80%;
+                                flex-direction: column;
+                                padding: 14px;
+                                background-color:  #2a2a2a;
+                                ">
+                                <text style="
+                                    color: white;
+                                    margin-bottom: 13px;
+                                    font-weight: 400;
+                                    font-size: 13px;
+                                    font-family: helvetica, arial, roboto;
+                                    "> Current actions happening: </text>
+                                <textarea listener_id="TASKS_LOG" placeholder="Nothing is being done." data="{}" style="
+                                    display: flex;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: #c3c3c3;
+                                    ">                                    
+                                                    </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a-content>
+            <a-footer style="
+                display: none;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                background-color: #201318;
+                height: 20px;
+                ">
+                <text style="
+                    font-size: 12px;
+                    font-family: helvvetica, arial, 'Roboto';
+                    font-weight: 200;
+                    color: white;
+                    "> 2021 </text>
+            </a-footer>
+        </app-menu>
+        <script type="text/javascript" src="/js/background_context/OPTIONS_PAGE/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/css/animations.css">
+        <link rel="stylesheet" type="text/css" href="/css/status_header.css">
+        <link rel="stylesheet" type="text/css" href="/css/popup_context/popup.css">
+        <title class="app_name_brand"></title>
+    </head>
+    <body>
+        <splash-screen class="fade-in" id="welcome-screen">
+            <div>
+                <logo class="fade-in app_logo_icon"></logo>
+                <extension-name class="app_name_brand"></extension-name>
+                <div id="text_message" style="
+                    padding: 5px;
+                    display: none;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    ">
+                    <text style="
+                        color: #ff5b5b;
+                        font-size: 10px;
+                        font-family: roboto regular;
+                        ">Free trial ended</text>
+                </div>
+                <actions>
+                    <vertical-slide-list id="welcome_screen_actions">
+                        <div></div>
+                    </vertical-slide-list>
+                </actions>
+            </div>
+        </splash-screen>
+        <app-menu class="fade-in">
+            <settings-popup class="fade-in">
+                <div>
+                    <quit listener_target="true" listener_id="close_settings_popup" class=""></quit>
+                    <header>
+                        <div>
+                            <e-title ui_string="Settings">Settings</e-title>
+                        </div>
+                    </header>
+                    <div role="content"></div>
+                </div>
+            </settings-popup>
+            <a-header>
+                <a-branding>
+                    <div>
+                        <a-logo class="app_logo_icon"></a-logo>
+                        <a-logotype class="app_name_brand"></a-logotype>
+                    </div>
+                </a-branding>
+                <div>
+                    <a-stats-info>
+                        <div>
+                            <a-stats-info></a-stats-info>
+                        </div>
+                    </a-stats-info>
+                </div>
+                <div>
+                    <div id="extension_state_toggle" title="Turn ON/OFF extension">
+                        <label class="switch">
+                            <input id="option_value" type="checkbox" listener_id="extension_state">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div listener_id="start_carbonalyser_analysis" id="start_carbonalyser_analysis" title="Start running Carbonalyser analysis">
+                        <div>
+                            <button ui_string="Start">Start</button>
+                        </div>
+                    </div>
+                    <a-states-info>
+                        <div></div>
+                    </a-states-info>
+                    <a-options-icon listener_target="true" listener_id="open_settings_popup" title="Settings">
+                        <div>
+                            <button></button>
+                        </div>
+                    </a-options-icon>
+                </div>
+            </a-header>
+            <a-content>
+                <div>
+                    <div id="main_actions">
+                        <div></div>
+                    </div>
+
+                    <div id="main_menu">
+                        <div>
+                            <div id="progress_bar">
+                                <div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar">
+                                            <div id="progressFill"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="extension_working_notice">
+                                <div>
+                                    <text ui_string="Analysis in progress. Start browsing the web, then come back here to get stats!">
+                                        Analysis in progress. Start browsing the web, then come back here to get stats!
+                                    </text>
+                                </div>
+                            </div>
+
+                            <div id="calculated_stats">
+                                <div>
+                                    <div>
+                                        <div id="section_1">
+                                            <div>
+                                                <div id="minutes_browsed_stat">
+                                                    <div>
+                                                        <text id="stat_value">2</text>
+                                                        <text id="stat_title" ui_string="minutes browsed">minutes browsed</text>
+                                                    </div>
+                                                </div>
+
+                                                <div id="data_downloaded_stat">
+                                                    <div>
+                                                        <text id="stat_value">3</text>
+                                                        <text id="stat_title" ui_string="Mb downloaded">Mb downloaded</text>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="section_2">
+                                            <div>
+                                                <div id="section_name">
+                                                    <text ui_string="CO2 emissions equivalent:">CO2 emissions equivalent:</text>
+                                                </div>
+                                                
+                                                <div id="row_display">
+                                                    <div id="emissions_equivalent">
+                                                        <div>
+                                                            <div id="emissions_equivalent_icon">
+                                                                <img src="/assets/icons/phone_icon.svg">
+                                                            </div>
+
+                                                            <div id="emissions_equivalent_data">
+                                                                <text id="stat_value">2</text>
+                                                                <text id="stat_title" ui_string="charged smartphones">charged smartphones</text>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="gco2_data">
+                                                        <div>
+                                                            <div id="gco2_data_icon">
+                                                                <img src="/assets/icons/gco2_icon.svg">
+                                                            </div>
+
+                                                            <div id="gco2">
+                                                                <text id="stat_value">2</text>
+                                                                <text id="stat_title">gCO₂e</text>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="actions">
+                                <div>
+                                    <div listener_id="reset_calculated_stats" id="reset_calculated_stats" title="Resets calculated data displayed.">
+                                        <div>
+                                            <button ui_string="Reset data">Reset data</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a-content>
+            <a-footer>
+                <text>2024</text>
+            </a-footer>
+        </app-menu>
+        <script type="text/javascript" src="/js/popup_context/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+{
+    "name"              : "Friendly Co2" ,
+    "description"       : "This chrome extension shows the digital footprint of the internet browsing habits of the user" ,
+    "version"           : "1.1" ,
+    "manifest_version"  : 3 , 
+    "author"            : "@shatnerlecruix" ,
+
+    "permissions" : 
+    [
+        "tabs",
+        "storage",
+        "webRequest"
+    ],
+
+    "host_permissions": 
+    [
+        "<all_urls>"
+    ],
+
+    "icons" : 
+    {
+        "16"    : "/assets/icons/16.png" ,
+        "32"    : "/assets/icons/32.png" ,
+        "128"   : "/assets/icons/128.png"
+    },
+
+    "background" : 
+    {
+        "scripts_for_popup_page" : 
+        [
+            "/js/GLOBALS.js",
+            "/libraries/delay.js",
+            "/libraries/items_modifiers.js",
+            "/libraries/status_header.js",
+            "/libraries/api_storage.js",
+            "/libraries/api_tabs.js",
+            "/js/popup_context/carbonalyser/index.js",
+            "/js/popup_context/ui/components.js",
+            "/js/popup_context/ui/update_components.js",
+            "/js/popup_context/onchanged_storage.js",
+            "/js/popup_context/context_messaging.js",
+            "/js/popup_context/main.js"
+        ],
+
+        "scripts_for_options_page" : 
+        [
+            "/js/GLOBALS.js",
+            "/libraries/delay.js",
+            "/libraries/items_modifiers.js",
+            "/libraries/status_header.js",
+            "/libraries/api_storage.js",
+            "/libraries/api_tabs.js",
+            "/js/background_context/OPTIONS_PAGE/ui/components.js",
+            "/js/background_context/OPTIONS_PAGE/ui/update_components.js",
+            "/js/background_context/OPTIONS_PAGE/onchanged_storage.js",
+            "/js/background_context/OPTIONS_PAGE/main.js"
+        ],
+        
+        "SW_scripts" : 
+        [
+            "/js/GLOBALS.js",
+            "/libraries/api_storage.js",
+            "/libraries/api_tabs.js",
+            "/libraries/delay.js",
+            "/libraries/icon_badge.js",
+            "/js/background_context/carbonalyser/index.js",
+            "/js/background_context/context_messaging.js",
+            "/js/background_context/on_installed.js",
+            "/js/background_context/reload_all_target_tabs.js",
+            "/js/background_context/onchanged_storage.js"
+        ],
+        
+        "service_worker": "/js/background_context/main.js"
+    },
+
+    "action":
+    {
+        "default_icon" : 
+        {
+            "16": "/assets/icons/16.png",
+            "32": "/assets/icons/32.png",
+            "128": "/assets/icons/128.png"
+        },
+
+       "default_popup" : "/html/popup_context/popup.html"
+    }
+}
